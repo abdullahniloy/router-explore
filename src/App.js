@@ -1,6 +1,9 @@
 
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './Components/Home/Home';
+import About from './Components/About/About';
+import Products from './Components/Products/Products';
 
 function App() {
   const router = createBrowserRouter([
@@ -8,10 +11,13 @@ function App() {
       path: '/', element: <div><h2>Default</h2></div>
     },
     {
-      path: '/home', element: <div><h2>Home</h2></div>
+      path: '/home', element: <Home></Home>
     },
     {
-      path: 'about', element: <div><h2>About</h2></div>
+      path: 'about', element: <About></About>
+    },
+    {
+      path: 'products', element: <Products></Products>
     },
 
   ])
