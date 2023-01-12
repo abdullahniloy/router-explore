@@ -23,12 +23,23 @@ function App() {
           path: 'products', element: <Products></Products>
         },
         {
-          path: 'friend', element: <Friend></Friend>
-        },
-        {
-          path: 'about', element: <About></About>
+          path: 'friend',
+          loader: async () => {
+            return fetch('https://jsonplaceholder.typicode.com/users')
+          },
+          element: <Friend></Friend>
         }
-      ]
+
+      ],
+
+    },
+    {
+      // eikhane about er modde header ta diye kora hoise
+
+      path: 'about', element: <About></About>
+    },
+    {
+      path: '*', element: <div><h1>You route not Found</h1></div>
     }
 
 
